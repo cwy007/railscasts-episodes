@@ -6,15 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# 新建一个用户
+# 新建一个用户和 10 个 faker users
 if User.all.count == 0
   User.create!(
     email: 'cwy@example.com',
     password: 'password'
   )
+  10.times do |i|
+    User.create!(
+      email: Faker::Internet.email,
+      password: 'password'
+    )
+  end
   puts %{
     初始化一个用户:
     email: 'cwy@example.com'
     password: 'password'
+    和 10 个 faker users
   }
 end
