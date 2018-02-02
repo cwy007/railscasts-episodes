@@ -1,6 +1,14 @@
 # == Route Map
 #
 #                   Prefix Verb   URI Pattern                    Controller#Action
+#                 articles GET    /articles(.:format)            articles#index
+#                          POST   /articles(.:format)            articles#create
+#              new_article GET    /articles/new(.:format)        articles#new
+#             edit_article GET    /articles/:id/edit(.:format)   articles#edit
+#                  article GET    /articles/:id(.:format)        articles#show
+#                          PATCH  /articles/:id(.:format)        articles#update
+#                          PUT    /articles/:id(.:format)        articles#update
+#                          DELETE /articles/:id(.:format)        articles#destroy
 #         new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
 #             user_session POST   /users/sign_in(.:format)       devise/sessions#create
 #     destroy_user_session DELETE /users/sign_out(.:format)      devise/sessions#destroy
@@ -21,6 +29,7 @@
 # 
 
 Rails.application.routes.draw do
+  resources :articles
   devise_for :users
   root 'welcome#index'
   get 'welcome', to: 'welcome#index', as: :welcome
