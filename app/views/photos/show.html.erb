@@ -1,18 +1,11 @@
+<h1 class="text-center"><%= @photo.name %></h1>
+
 <div class="text-right">
-  <%= link_to photo_comments_path(@photo), class: 'btn btn-secondary' do %>
-    Comments <span class="badge badge-info"><%= @photo.comments.size %></span>
-  <% end %>
+  <%= link_to "Back to photos", photos_path, class: "btn btn-outline-primary" %>
 </div>
+<p><%= @photo.filename %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @photo.name %>
-</p>
+<h2 class="text-center">Comments</h2>
 
-<p>
-  <strong>Filename:</strong>
-  <%= @photo.filename %>
-</p>
-
-<%= link_to 'Edit', edit_photo_path(@photo) %> |
-<%= link_to 'Back', photos_path %>
+<%= render partial: "comments/comment", collection: @comments %>
+<%= render "comments/form" %>

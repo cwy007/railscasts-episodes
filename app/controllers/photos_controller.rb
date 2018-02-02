@@ -10,6 +10,9 @@ class PhotosController < ApplicationController
   # GET /photos/1
   # GET /photos/1.json
   def show
+    @commentable = @photo
+    @comments = @commentable.comments
+    @comment = Comment.new 
   end
 
   # GET /photos/new
