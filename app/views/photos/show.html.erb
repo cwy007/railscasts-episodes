@@ -1,0 +1,18 @@
+<div class="text-right">
+  <%= link_to photo_comments_path(@photo), class: 'btn btn-secondary' do %>
+    Comments <span class="badge badge-info"><%= @photo.comments.size %></span>
+  <% end %>
+</div>
+
+<p>
+  <strong>Name:</strong>
+  <%= @photo.name %>
+</p>
+
+<p>
+  <strong>Filename:</strong>
+  <%= @photo.filename %>
+</p>
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>

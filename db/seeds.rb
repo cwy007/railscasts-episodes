@@ -26,14 +26,33 @@ if User.all.count == 0
   }
 end
 
-# 新建 10 篇文章
+# 新建 10 篇文章并且为每个 photo 新建 5 comments
 if Article.all.count == 0
   10.times do |i|
-    Article.create!(
+    article = Article.create!(
       name: Faker::Lorem.words(3).join(' '),
       content: Faker::Matz.quote
     )
+    5.times do |i|
+      article.comments.create!(content: Faker::Movie.quote)
+    end
     print "*"
   end
-  puts "\n新建 10 篇文章"
+  puts "\n新建 10 篇文章并且为每个 photo 新建 5 comments"
+end
+
+# 新建 10 photos 并且为每个 photo 新建 5 comments
+if Photo.all.count == 0
+  10.times do |i|
+    fake_name = Faker::Lorem.words(1..3)
+    photo = Photo.create!(
+      name: fake_name.join(' '),
+      filename: "#{fake_name.join('_')}.jpg"
+    )
+    5.times do |i|
+      photo.comments.create!(content: Faker::Movie.quote)
+    end
+    print "*"
+  end
+  puts "\n新建 10 photos 并且为每个 photo 新建 5 comments"
 end

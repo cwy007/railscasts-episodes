@@ -1,9 +1,9 @@
-<h1>Comments</h1>
+<h1 class="text-center"><%= @commentable.name %> / Comments</h1>
 
-<div class="card card-sm">
   <% @comments.each do |comment| %>
+  <div class="card my-3">
     <div class="card-body bg-light">
       <%= simple_format comment.content %>
     </div>
+  </div>
   <% end %>
-</div>
