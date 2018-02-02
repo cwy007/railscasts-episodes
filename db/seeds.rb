@@ -25,3 +25,15 @@ if User.all.count == 0
     和 10 个 faker users
   }
 end
+
+# 新建 10 篇文章
+if Article.all.count == 0
+  10.times do |i|
+    Article.create!(
+      name: Faker::Lorem.words(3).join(' '),
+      content: Faker::Matz.quote
+    )
+    print "*"
+  end
+  puts "\n新建 10 篇文章"
+end
