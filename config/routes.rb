@@ -26,10 +26,21 @@
 #                          POST   /users(.:format)               devise/registrations#create
 #                     root GET    /                              welcome#index
 #                  welcome GET    /welcome(.:format)             welcome#index
-# 
+#
 
 Rails.application.routes.draw do
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
+
+  resources :photos do
+    resources :comments
+  end
+
+  resources :events do
+    resources :comments
+  end
+  
   devise_for :users
   root 'welcome#index'
   get 'welcome', to: 'welcome#index', as: :welcome
