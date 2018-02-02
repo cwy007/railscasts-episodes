@@ -1,6 +1,14 @@
 # == Route Map
 #
 #                   Prefix Verb   URI Pattern                                       Controller#Action
+#                   events GET    /events(.:format)                                 events#index
+#                          POST   /events(.:format)                                 events#create
+#                new_event GET    /events/new(.:format)                             events#new
+#               edit_event GET    /events/:id/edit(.:format)                        events#edit
+#                    event GET    /events/:id(.:format)                             events#show
+#                          PATCH  /events/:id(.:format)                             events#update
+#                          PUT    /events/:id(.:format)                             events#update
+#                          DELETE /events/:id(.:format)                             events#destroy
 #                   photos GET    /photos(.:format)                                 photos#index
 #                          POST   /photos(.:format)                                 photos#create
 #                new_photo GET    /photos/new(.:format)                             photos#new
@@ -49,11 +57,11 @@
 #                          PATCH  /events/:event_id/comments/:id(.:format)          comments#update
 #                          PUT    /events/:event_id/comments/:id(.:format)          comments#update
 #                          DELETE /events/:event_id/comments/:id(.:format)          comments#destroy
-#                   events GET    /events(.:format)                                 events#index
+#                          GET    /events(.:format)                                 events#index
 #                          POST   /events(.:format)                                 events#create
-#                new_event GET    /events/new(.:format)                             events#new
-#               edit_event GET    /events/:id/edit(.:format)                        events#edit
-#                    event GET    /events/:id(.:format)                             events#show
+#                          GET    /events/new(.:format)                             events#new
+#                          GET    /events/:id/edit(.:format)                        events#edit
+#                          GET    /events/:id(.:format)                             events#show
 #                          PATCH  /events/:id(.:format)                             events#update
 #                          PUT    /events/:id(.:format)                             events#update
 #                          DELETE /events/:id(.:format)                             events#destroy
@@ -77,6 +85,7 @@
 # 
 
 Rails.application.routes.draw do
+  resources :events
   resources :photos
   resources :articles do
     resources :comments
