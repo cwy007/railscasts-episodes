@@ -1,9 +1,7 @@
 <h1 class="text-center"><%= @commentable.name %> / Comments</h1>
 
-  <% @comments.each do |comment| %>
-  <div class="card my-3">
-    <div class="card-body bg-light">
-      <%= simple_format comment.content %>
-    </div>
-  </div>
-  <% end %>
+<p class="text-right">
+  <%= link_to "New Comment", [:new, @commentable, :comment], class: 'btn btn-primary' %>
+</p>
+
+<%= render @comments %>
