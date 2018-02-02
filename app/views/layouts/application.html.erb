@@ -13,6 +13,7 @@
 
     <div class="container">
       <%= render "common/flashes" %>
+      <%= render "common/nav" %>
       <%= yield %>
       <div class="bg-light p-3 mt-5">
         <%= debug(params) if Rails.env.development? %>
