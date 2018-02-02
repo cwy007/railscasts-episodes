@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'welcome#index'
-  get 'welcome/index', as: :welcome
+  get 'welcome', to: 'welcome#index', as: :welcome
 end
