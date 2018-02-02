@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# 新建一个用户
+if User.all.count == 0
+  User.create!(
+    email: 'cwy@example.com',
+    password: 'password'
+  )
+  puts %{
+    初始化一个用户:
+    email: 'cwy@example.com'
+    password: 'password'
+  }
+end

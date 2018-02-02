@@ -14,7 +14,7 @@
     <div class="container">
       <%= render "common/flashes" %>
       <%= yield %>
-      <div class="bg-light p-3">
+      <div class="bg-light p-3 mt-5">
         <%= debug(params) if Rails.env.development? %>
       </div>
     </div>
