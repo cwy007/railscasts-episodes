@@ -1,5 +1,4 @@
 <%= simple_form_for [@commentable, @comment] do |f| %>
   <%= f.input :content, input_html: { rows: 8 } %>
   <%= f.button :submit, class: 'btn btn-primary' %>
-  <%= link_to "Back", [@commentable, :comments], class: 'btn btn-secondary' %>
 <% end %>
