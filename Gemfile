@@ -56,6 +56,7 @@ group :development do
   gem 'rails-erd'
   gem 'awesome_rails_console'
   gem "letter_opener"
+  gem 'annotate'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
