@@ -61,7 +61,7 @@ end
 if Event.all.count == 0
   10.times do |i|
     event = Event.create!(
-             name: Faker::Lorem.words(2..4),
+             name: Faker::Lorem.words(2..4).join(' '),
         starts_at: i.days.from_now,
           ends_at: (i + 2).days.from_now,
       description: Faker::Lorem.paragraphs.join("\n")
