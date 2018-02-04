@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Railscasts</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render "common/navbar" %>
+
+    <div class="container">
+      <%= render "common/flashes" %>
+      <%= render "common/nav" %>
+      <%= yield %>
+      <div class="bg-light p-3 mt-5">
+        <%= debug(params) if Rails.env.development? %>
+      </div>
+    </div>
+    <%= render "common/footer" %>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<h1 class="text-center"><%= @event.name %></h1>
+
+<div class="text-right">
+  <%= link_to "Back to Events", events_path, class: 'btn btn-outline-primary' %>
+</div>
+
+<p class="h3">
+  Event time:
+  <span class="small">
+    <%= @event.starts_at.to_s(:long) %> - <%= @event.ends_at.to_s(:long) %>
+  </span>
+</p>
+
+<p><%= simple_format @event.description %></p>
+
+<h2 class="text-center">Comments</h2>
+
+<%= render partial: "comments/comment", collection: @comments %>
+<%= render "comments/form" %>

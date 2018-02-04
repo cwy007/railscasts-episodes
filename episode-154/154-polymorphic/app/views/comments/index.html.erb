@@ -1,0 +1,7 @@
+<h1 class="text-center"><%= @commentable.name %> / Comments</h1>
+
+<p class="text-right">
+  <%= link_to "New Comment", [:new, @commentable, :comment], class: 'btn btn-primary' %>
+</p>
+
+<%= render @comments %>

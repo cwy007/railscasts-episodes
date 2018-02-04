@@ -1,0 +1,14 @@
+# == Schema Information
+#
+# Table name: articles
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  content    :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+class Article < ApplicationRecord
+  has_many :comments, as: :commentable
+end

@@ -1,0 +1,12 @@
+<h1 class="text-center"><%= @article.name %></h1>
+
+<%= simple_format @article.content %>
+
+<p class="text-right">
+  <%= link_to 'Back to Articles', articles_path, class: 'btn btn-outline-primary' %>
+</p>
+
+<h2 class="text-center">Comments</h2>
+
+<%= render partial: "comments/comment", collection: @comments %>
+<%= render "comments/form" %>
