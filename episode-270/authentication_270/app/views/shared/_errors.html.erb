@@ -1,0 +1,12 @@
+<% if object.errors.any? %>
+  <div class="card boder-danger my-3">
+    <div class="card-header bg-danger">
+      Form is invalid
+    </div>
+    <ul class="card-body">
+      <% object.errors.full_messages.each do |msg| %>
+        <li class="card-text mx-3"><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
